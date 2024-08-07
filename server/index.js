@@ -4,10 +4,16 @@ const dotenv = require('dotenv');
 dotenv.config();
 const authRoute = require('./routes/authRoute.js');
 const connectDb = require('./config/db.js');
+const cors = require('cors');
+
+
+app.use(express.json());
+app.use(cors());
 
 
 app.use('/api/v1/auth', authRoute );
 
+connectDb();
 app.listen(process.env.PORT || 3000, ()=>{
     console.log(`Server is running at port ${process.env.PORT}`);
 })
