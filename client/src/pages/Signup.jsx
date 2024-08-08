@@ -34,19 +34,22 @@ const handleSubmit= async (e)=>{
         password:'',
         accountType:'buyer'
       });
+      setloading(false);
       toast.success(data.message);
       navigate('/login');
     }
-    setloading(false);
+    
   } catch (error) {
+    setloading(false);
+
     toast.error(error.response.data.message);
   }
 
 }
 
   return (
-    <div className=" mt-20 sm:mt-12 min-h-screen flex items-center justify-center w-full">
-      <div className="bg-white shadow-md rounded-3xl px-5 py-6 w-full sm:w-[27vw]">
+    <div className=" mt-16 sm:mt-12 min-h-screen flex items-center justify-center w-full">
+      <div className="bg-white  shadow-md shadow-green-600 rounded-3xl px-5 py-6 w-[85vw] sm:w-[27vw]">
         <h1 className="text-2xl font-semibold text-center mb-2 text-green-600">
           Register Account
         </h1>

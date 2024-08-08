@@ -2,6 +2,7 @@ import PrashantImage from "../assets/Prashant.jpg";
 import AnkitImage from "../assets/Ankit.jpg";
 import KritanImage from "../assets/Kritan.jpg";
 import RohanImage from "../assets/Rohan.jpeg";
+import Footer from '../components/Footer';
 const About = () => {
   const founders = [
     {
@@ -24,7 +25,7 @@ const About = () => {
       image: RohanImage,
     },
   ];
-  return (
+  return (<>
     <div className="mt-28 flex flex-col gap-5 p-5 ">
       <div>
         <h1 className="text-2xl font-bold text-green-600 text-center mb-3">
@@ -65,6 +66,10 @@ const About = () => {
       </div>
       </div>
     </div>
+    <h3 className="text-center font-bold text-2xl text-green-600">Get connected</h3>
+    <hr className="border-t-4 border-gray-400" />
+    <Footer/>
+    </>
   );
 };
 
