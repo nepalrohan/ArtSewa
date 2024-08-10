@@ -2,14 +2,17 @@ import {Link} from 'react-router-dom';
 import { TbMenuDeep } from "react-icons/tb";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 const Navbar = () => {
+  const {pathname} = useLocation();
   const [menu, setMenu]=useState(false);
 
   const handleMenu = ()=>{
     setMenu(!menu);
   }
   return (
-    <nav className='flex  sm:flex-row items-start sm:items-center justify-between px-5 py-5 fixed top-0 left-0 right-0 bg-white shadow-md gap-1 sm:gap-0 z-30'>
+    <nav className={`flex  sm:flex-row items-start sm:items-center justify-between px-5 py-5 ${pathname === "/seller/profile" || pathname === "/buyer/profile" ? "hidden":"fixed"} top-0 left-0 right-0 bg-white shadow-md gap-1 sm:gap-0 z-30`}>
     {/* logo */}
         <div className='flex items-center justify-between'>
 <Link to='/' className='font-bold text-3xl'>Art<span className='text-green-600 text-2xl'>sewa</span></Link>
